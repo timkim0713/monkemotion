@@ -39,11 +39,14 @@ function Navbar(props) {
             </Typography>
             <Divider />
             <List>
-                {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
-                        </ListItemButton>
+                {navItems.map((item, idx) => (
+                    <ListItem key={item} >
+
+                        <Link to={navItemsPath[idx]}>
+                            <ListItemButton sx={{ textAlign: 'center' }}>{item}
+                            </ListItemButton>
+                        </Link>
+
                     </ListItem>
                 ))}
             </List>
@@ -74,9 +77,12 @@ function Navbar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item, idx) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
-                                <Link to={navItemsPath[idx]}>{item}</Link>
-                            </Button>
+
+                            <Link to={navItemsPath[idx]}>
+                                <Button key={item} sx={{ color: '#fff' }}>{item}
+                                </Button>
+                            </Link>
+
                         ))}
                     </Box>
                 </Toolbar>
