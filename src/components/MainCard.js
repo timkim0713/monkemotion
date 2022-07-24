@@ -6,21 +6,21 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
-function MainCard() {
+function MainCard({ title, content }) {
     return (
-        <Card >
-            <CardMedia
+        <Card sx={{ m: 4 }}>
+            {/* <CardMedia
                 component="img"
                 width="50"
                 image="http://images5.fanpop.com/image/photos/31600000/Letter-S-pink-the-letter-s-31612055-203-250.jpg"
                 alt="green iguana"
-            />
+            /> */}
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Red S
+                    {title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    AAAA
+                    {content}
                 </Typography>
             </CardContent>
             <CardActions>

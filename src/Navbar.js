@@ -23,7 +23,12 @@ function Navbar() {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Monkemotion
                 </Typography>
-                <Button color="inherit">Login</Button>
+                <Box display={"flex"} justifyContent={"space-around"} sx={{ width: "27%" }}>
+                    <Button color="inherit">Home</Button>
+                    <Button color="inherit">Contribute</Button>
+                    <Button color="inherit">Research</Button>
+                    <Button color="inherit">About</Button>
+                </Box>
             </Toolbar>
         </AppBar>
 
