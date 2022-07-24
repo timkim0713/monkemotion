@@ -6,11 +6,11 @@ import { Container } from "@mui/system";
 function App() {
   return (
     <>
-    <Navbar></Navbar>
-    <Container>
-      <MainContent></MainContent>
-    </Container>
-    <Footer></Footer>
+      <Navbar></Navbar>
+      <Container sx={{ mt: 10, mb: 10 }}>
+        <MainContent></MainContent>
+      </Container>
+      <Footer></Footer>
     </>
   );
 }
