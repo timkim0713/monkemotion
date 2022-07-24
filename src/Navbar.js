@@ -14,9 +14,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 const navItems = ['Home', 'Contribute', 'Research', 'About'];
+const navItemsPath = ['', 'contribute', 'research', 'about'];
 
 
 function Navbar(props) {
@@ -33,7 +35,7 @@ function Navbar(props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                MONKEMOTION
             </Typography>
             <Divider />
             <List>
@@ -71,9 +73,9 @@ function Navbar(props) {
                         MONKEMOTION
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        {navItems.map((item) => (
+                        {navItems.map((item, idx) => (
                             <Button key={item} sx={{ color: '#fff' }}>
-                                {item}
+                                <Link to={navItemsPath[idx]}>{item}</Link>
                             </Button>
                         ))}
                     </Box>
