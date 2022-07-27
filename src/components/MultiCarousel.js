@@ -22,15 +22,20 @@ export default function MultiCarousel() {
         }
     };
     return (
-        <Carousel responsive={responsive}>
+        <Carousel responsive={responsive}
+            arrows={false}
+            swipeable={false}
+            showDots={false}
+            draggable={true}
+            infinite={true}
+            autoPlay={true}
+        >
             <div>Item 1</div>
             <div>Item 2</div>
             <div>Item 3</div>
-            <div>Item 4</div>
-            <div>Item 4</div>
-
-            <div>Item 4</div>
-            <div>Item 4</div>
+            <div>Item 5</div>
+            <div>Item 6</div>
+            <div>Item 7</div>
 
         </Carousel>
     );

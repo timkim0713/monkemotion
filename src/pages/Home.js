@@ -13,14 +13,7 @@ function Home() {
             </Box>
 
             <Box mt={10}>
-                <MultiCarousel
-                    arrows={false}
-                    swipeable={false}
-                    draggable={false}
-                    showDots={false}
-                    infinite={false}
-
-                />
+                <MultiCarousel />
             </Box>
 
         </Box>
