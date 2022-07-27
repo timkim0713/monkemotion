@@ -13,7 +13,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -38,19 +37,18 @@ function Navbar(props) {
                 MONKEMOTION
             </Typography>
             <Divider />
-            <List>
-                {navItems.map((item, idx) => (
-                    <ListItem key={item} >
+            {navItems.map((item, idx) => (
+                <Link to={navItemsPath[idx]} style={{ textDecoration: 'none', }}>
+                    <ListItemButton >
+                        <Typography variant="body2">
+                            {item}
+                        </Typography>
 
-                        <Link to={navItemsPath[idx]}>
-                            <ListItemButton sx={{ textAlign: 'center' }}>{item}
-                            </ListItemButton>
-                        </Link>
-
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
+                    </ListItemButton>
+                </Link>
+            ))
+            }
+        </Box >
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
