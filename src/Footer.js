@@ -7,37 +7,31 @@ import { Button } from '@mui/material';
 function Footer() {
     return (
         <Grid
-        container
-        direction="column"
-        alignItems="center">
-            <Grid>
-                <Box sx={{ height: "50vh", backgroundColor: "lightGrey" }}>
-                {/* <p>Footer</p> */}
-                <Typography variant={"body1"}>Monkemotion Footer</Typography>
-                </Box>
-            </Grid>
-
-            <Grid
             container
             direction="row"
-            alignItems="center">
-                <Grid>
+            justifyContent="center"
+            sx={{ height: "40vh", backgroundColor: "lightGrey", paddingTop: 10 }}
+        >
+            <Typography variant={"body1"}>Monkemotion Footer</Typography>
+            <Grid container direction="row" justifyContent={"center"}>
+                <Grid item>
                     <Button>HOME</Button>
                 </Grid>
 
-                <Grid>
+                <Grid item>
                     <Button>CONTRIBUTE</Button>
                 </Grid>
 
-                <Grid>
+                <Grid item>
                     <Button>RESEARCH</Button>
                 </Grid>
 
-                <Grid>
+                <Grid item>
                     <Button>ABOUT</Button>
                 </Grid>
             </Grid>
-        </Grid>
+
+        </Grid >
     );
 }
 
