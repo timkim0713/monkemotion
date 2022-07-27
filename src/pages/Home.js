@@ -6,7 +6,7 @@ function Home() {
     return (
         <Box>
             <MainCarousel />
-            <MainContent></MainContent>
+            <MainContent />
         </Box>
     );
 }
