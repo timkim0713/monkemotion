@@ -13,7 +13,15 @@ function Home() {
             </Box>
 
             <Box mt={10}>
-                <MultiCarousel />
+                <Box mt={5}>
+                    <MultiCarousel autoPlaySpeed={300} rtl={false} />
+                </Box>
+                <Box mt={5}>
+                    <MultiCarousel autoPlaySpeed={200} rtl={true} />
+                </Box>
+                <Box mt={5}>
+                    <MultiCarousel autoPlaySpeed={350} rtl={false} />
+                </Box>
             </Box>
 
         </Box>

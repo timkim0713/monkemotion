@@ -3,7 +3,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Card from '@mui/material/Card';
 
 
-export default function MultiCarousel() {
+export default function MultiCarousel({ autoPlaySpeed, rtl }) {
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -12,7 +12,7 @@ export default function MultiCarousel() {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3
+            items: 5
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -31,30 +31,27 @@ export default function MultiCarousel() {
             draggable={true}
             infinite={true}
             autoPlay={true}
-        >
-            <div>
-                <Card sx={{ height: 200, width: 200, }}>
-                </Card>
-            </div>
+            rewind={false}
+            autoPlaySpeed={autoPlaySpeed}
+            rtl={rtl}
 
-            <div>
-                <Card sx={{ height: 200, width: 200, }}>
-                </Card>
-            </div>
-            <div>
-                <Card sx={{ height: 200, width: 200, }}>
-                </Card>
-            </div>
-            <div>
-                <Card sx={{ height: 200, width: 200, }}>
-                </Card>
-            </div>
-            <div>
-                <Card sx={{ height: 200, width: 200, }}>
-                </Card>
-            </div>
-           
-           
+        >
+            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+            </Card>
+
+            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+            </Card>
+
+            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+            </Card>
+
+            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+            </Card>
+
+            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+            </Card>
+
+
         </Carousel>
     );
 
