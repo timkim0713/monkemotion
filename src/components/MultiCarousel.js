@@ -1,7 +1,7 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from '@mui/material/Card';
-
+import Box from "@mui/material/Box"
 
 export default function MultiCarousel({ autoPlaySpeed, rtl }) {
     const responsive = {
@@ -24,35 +24,40 @@ export default function MultiCarousel({ autoPlaySpeed, rtl }) {
         }
     };
     return (
-        <Carousel responsive={responsive}
-            arrows={false}
-            swipeable={true}
-            showDots={false}
-            draggable={true}
-            infinite={true}
-            autoPlay={true}
-            rewind={false}
-            autoPlaySpeed={autoPlaySpeed}
-            rtl={rtl}
+        <Box >
 
-        >
-            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-            </Card>
-
-            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-            </Card>
-
-            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-            </Card>
-
-            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-            </Card>
-
-            <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-            </Card>
+            <Carousel responsive={responsive}
+                arrows={false}
+                swipeable={true}
+                showDots={false}
+                draggable={true}
+                infinite={true}
+                autoPlay={true}
+                rewind={false}
+                autoPlaySpeed={autoPlaySpeed}
+                rtl={rtl}
+            >
 
 
-        </Carousel>
+                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+                </Card>
+
+                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+                </Card>
+
+                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+                </Card>
+
+                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+                </Card>
+
+                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
+                </Card>
+
+
+            </Carousel>
+
+        </Box>
     );
 
 

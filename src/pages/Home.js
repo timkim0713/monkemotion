@@ -13,8 +13,22 @@ function Home() {
             </Box>
 
             <Box mt={10}>
-                <Box mt={5}>
-                    <MultiCarousel autoPlaySpeed={300} rtl={false} />
+                <Box mt={5} sx={{
+                    backdropFilter: "blur(5px)", backgroundColor:
+                        "rgba(255,255,255,0.8)",
+                    backgroundColor: "blue", display: "flex", flexDirection: "row"
+                }}>
+                    <Box sx={{
+                        backgroundColor: "red",
+                        width: 100
+                    }}></Box>
+                    <Box width={"90%"}>
+                        <MultiCarousel autoPlaySpeed={300} rtl={false} />
+                    </Box>
+                    <Box sx={{
+                        backgroundColor: "red",
+                        width: 100,
+                    }}></Box>
                 </Box>
                 <Box mt={5}>
                     <MultiCarousel autoPlaySpeed={200} rtl={true} />
