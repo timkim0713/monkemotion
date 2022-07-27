@@ -1,5 +1,7 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Card from '@mui/material/Card';
+
 
 export default function MultiCarousel() {
     const responsive = {
@@ -24,19 +26,35 @@ export default function MultiCarousel() {
     return (
         <Carousel responsive={responsive}
             arrows={false}
-            swipeable={false}
+            swipeable={true}
             showDots={false}
             draggable={true}
             infinite={true}
             autoPlay={true}
         >
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 5</div>
-            <div>Item 6</div>
-            <div>Item 7</div>
+            <div>
+                <Card sx={{ height: 200, width: 200, }}>
+                </Card>
+            </div>
 
+            <div>
+                <Card sx={{ height: 200, width: 200, }}>
+                </Card>
+            </div>
+            <div>
+                <Card sx={{ height: 200, width: 200, }}>
+                </Card>
+            </div>
+            <div>
+                <Card sx={{ height: 200, width: 200, }}>
+                </Card>
+            </div>
+            <div>
+                <Card sx={{ height: 200, width: 200, }}>
+                </Card>
+            </div>
+           
+           
         </Carousel>
     );
 
