@@ -14,21 +14,22 @@ function Home() {
 
             <Box mt={10}>
                 <Box mt={5} sx={{
-                    backdropFilter: "blur(5px)", backgroundColor:
-                        "rgba(255,255,255,0.8)",
-                    backgroundColor: "blue", display: "flex", flexDirection: "row"
+                    display: "flex", flexDirection: "row"
                 }}>
                     <Box sx={{
-                        backgroundColor: "red",
-                        width: 100
-                    }}></Box>
+                        backdropFilter: "blur(15px)",
+                        background: "linear-gradient(rgba(255,255,255,0), #afff)",
+                        width: 100,
+                        position: "absolute",
+
+                    }} />
                     <Box width={"90%"}>
                         <MultiCarousel autoPlaySpeed={300} rtl={false} />
                     </Box>
                     <Box sx={{
-                        backgroundColor: "red",
-                        width: 100,
-                    }}></Box>
+                        backdropFilter: "blur(15px)", background: "linear-gradient(rgba(255,255,255,0), #afff)",
+                        width: 100
+                    }} />
                 </Box>
                 <Box mt={5}>
                     <MultiCarousel autoPlaySpeed={200} rtl={true} />
