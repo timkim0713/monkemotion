@@ -55,7 +55,7 @@ function Navbar(props) {
 
     return (
         <>
-            <AppBar component="nav">
+            <AppBar component="nav" style={{ zIndex: 99999 }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"

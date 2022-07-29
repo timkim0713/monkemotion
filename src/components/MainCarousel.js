@@ -4,7 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 export default function MainCarousel() {
 
     return (
-        <Carousel autoPlay={true} emulateTouch={true} infiniteLoop={true} showThumbs={false} showStatus={false}>
+        <Carousel
+            autoPlay={true} emulateTouch={true} infiniteLoop={true} showThumbs={false} showStatus={false}>
             <div>
                 <img src="https://picsum.photos/id/237/600/300" />
                 <p className="legend">Legend 1</p>
