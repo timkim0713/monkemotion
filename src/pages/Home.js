@@ -25,7 +25,7 @@ function Home() {
 
                     }} />
                     <Box width={"100%"}>
-                        <MultiCarousel autoPlaySpeed={300} rtl={false} />
+                        <MultiCarousel autoPlaySpeed={1200} rtl={false} />
                     </Box>
 
                     <Box>
@@ -42,10 +42,10 @@ function Home() {
 
                 </Box>
                 <Box mt={5}>
-                    <MultiCarousel autoPlaySpeed={200} rtl={true} />
+                    <MultiCarousel autoPlaySpeed={1000} rtl={true} />
                 </Box>
                 <Box mt={5}>
-                    <MultiCarousel autoPlaySpeed={350} rtl={false} />
+                    <MultiCarousel autoPlaySpeed={1100} rtl={false} />
                 </Box>
             </Box>
 
