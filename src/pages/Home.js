@@ -17,21 +17,29 @@ function Home() {
                     display: "flex", flexDirection: "row"
                 }}>
                     <Box sx={{
-                        background: "linear-gradient(to left, rgba(255,255,255,0), #a0f)",
-                        height: 100,
+                        background: "linear-gradient(to left, rgba(255,255,255,0), #fff)",
+                        height: 350,
+                        width: 100,
                         position: "absolute",
                         zIndex: 9999
 
-                    }}>
-                        <p>aSDFAS</p>
-                    </Box>
+                    }} />
                     <Box width={"100%"}>
                         <MultiCarousel autoPlaySpeed={300} rtl={false} />
                     </Box>
-                    {/* <Box sx={{
-                        backdropFilter: "blur(15px)", background: "linear-gradient(to right, rgba(255,255,255,0), #afff)",
-                        width: 100
-                    }} /> */}
+
+                    <Box>
+                        <Box sx={{
+                            background: "linear-gradient(to right, rgba(255,255,255,0), #fff)",
+                            height: 350,
+                            width: 100,
+                            position: "absolute",
+                            zIndex: 9999,
+                            marginLeft: -12
+
+                        }} />
+                    </Box>
+
                 </Box>
                 <Box mt={5}>
                     <MultiCarousel autoPlaySpeed={200} rtl={true} />
@@ -41,7 +49,7 @@ function Home() {
                 </Box>
             </Box>
 
-        </Box>
+        </Box >
     );
 }
 
