@@ -1,6 +1,6 @@
 import { Divider, Typography, Box } from '@mui/material';
 
-export default function MainCarousel({ title, date, author, content }) {
+export default function MainCarousel({ title, date, author, content, topImg, bottomImg }) {
 
     return (
         <>
@@ -20,9 +20,13 @@ export default function MainCarousel({ title, date, author, content }) {
             </Box>
             <Divider sx={{ m: 2, ml: 0 }} />
             <Box>
+                <img src={topImg} />
+
                 <Typography variant="body1" color="#404040" sx={{ lineHeight: 2 }}>
                     {content}
                 </Typography>
+                <img src={bottomImg} />
+
             </Box>
         </>
     );
