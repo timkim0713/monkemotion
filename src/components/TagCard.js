@@ -10,7 +10,7 @@ import Box from "@mui/material/Box"
 function TagCard() {
     return (
 
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={7}>
             <Card sx={{ height: 425, width: "100%", }}>
                 {/* <CardMedia
                     component="img"
