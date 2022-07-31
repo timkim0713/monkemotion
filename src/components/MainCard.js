@@ -25,3 +25,12 @@ function MainCard({ title, content }) {
 }
 
 export default MainCard;
+
+
+
+
+
+//CollaborateCard
+
+// 1. TagCard [8]
+// 2. InstructionCard [4]

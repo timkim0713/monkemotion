@@ -10,13 +10,13 @@ function CollaborateCard() {
     return (
         <Box sx={{ width: "100%" }}>
             <Grid
-            container
-            direction={"row"}
-            justifyContent={"space-between"} columnSpacing={10}>
+                container
+                direction={"row"}
+                justifyContent={"space-between"} columnSpacing={5}>
                 <TagCard />
                 <InstructionCard />
             </Grid>
-       </Box>
+        </Box>
     );
 }
 

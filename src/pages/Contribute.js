@@ -7,7 +7,9 @@ function Contribute() {
     return (
         <Box>
             <Heading title={"Contribute"} content={"This is contribute page"} />
-            <CollaborateCard />
+            <Box sx={{ mt: -5 }}>
+                <CollaborateCard />
+            </Box>
         </Box>
     );
 }
