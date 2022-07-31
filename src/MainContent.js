@@ -15,17 +15,7 @@ function MainContent() {
                     </Card>
                 </Grid>
 
-                <Grid item xs={12} md={6}>
-                    <Card sx={{ height: 400, width: "100%", }}>
-                        <CardContent>
-                            <Typography variant='h4'>monkemotion</Typography>
-                            <Typography variant='body1'>
-                                Description about monkemotion. Learn more!
-                            </Typography>
-
-                        </CardContent>
-                    </Card>
-                </Grid>
+                <MainCard title={"Monkemotion"} content={"description"} />
             </Grid>
         </Box>
     );

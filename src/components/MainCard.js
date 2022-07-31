@@ -5,29 +5,22 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-
+import Grid from "@mui/material/Grid"
 function MainCard({ title, content }) {
     return (
-        <Card sx={{ m: 4 }}>
-            {/* <CardMedia
-                component="img"
-                width="50"
-                image="http://images5.fanpop.com/image/photos/31600000/Letter-S-pink-the-letter-s-31612055-203-250.jpg"
-                alt="green iguana"
-            /> */}
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {content}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-        </Card>
+
+        <Grid item xs={12} md={6}>
+            <Card sx={{ height: 400, width: "100%", }}>
+                <CardContent>
+                    <Typography variant='h4'>{title}</Typography>
+                    <Typography variant='body1'>
+                        {content}
+                    </Typography>
+
+                </CardContent>
+            </Card>
+        </Grid>
+
     );
 }
 
