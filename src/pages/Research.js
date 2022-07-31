@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { Divider, Typography } from '@mui/material';
 import Article from "../components/Article"
 
-
+import Heading from "../components/Heading"
 const RESEARCH_CONTENT = [
 
     {
@@ -37,7 +37,9 @@ const RESEARCH_CONTENT = [
 
 function Research() {
     return (
-        <Box mt={25} mb={20}>
+        <Box mb={20}>
+            <Heading title={"Research"} content={"Description"} />
+
             {RESEARCH_CONTENT.map((data, index) =>
                 <>
                     <Article
