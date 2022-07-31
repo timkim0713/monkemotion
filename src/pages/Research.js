@@ -38,7 +38,7 @@ const RESEARCH_CONTENT = [
 function Research() {
     return (
         <Box mb={20}>
-            <Heading title={"Research"} content={"Description"} />
+            <Heading title={"Research"} content={"Learn more about the topic."} />
 
             {RESEARCH_CONTENT.map((data, index) =>
                 <>

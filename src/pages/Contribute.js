@@ -6,7 +6,7 @@ import CollaborateCard from "../components/CollaborateCard"
 function Contribute() {
     return (
         <Box>
-            <Heading title={"Contribute"} content={"This is contribute page"} />
+            <Heading title={"Contribute"} content={"Be a part of the project."} />
             <Box sx={{ mt: -5 }}>
                 <CollaborateCard />
             </Box>

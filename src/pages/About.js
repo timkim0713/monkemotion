@@ -11,7 +11,7 @@ function About() {
     return (
 
         <Box sx={{ width: "100%" }}>
-            <Heading title={"About"} content={"This is about page"} />
+            <Heading title={"About"} content={"Learn about what we do."} />
             <Box mt={10}>
                 <MainContent />
             </Box>
