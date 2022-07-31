@@ -8,10 +8,15 @@ import InstructionCard from "../components/InstructionCard"
 
 function CollaborateCard() {
     return (
-        <>
-       <TagCard />
-       <InstructionCard />
-       </>
+        <Box sx={{ width: "100%" }}>
+            <Grid
+            container
+            direction={"row"}
+            justifyContent={"space-between"} columnSpacing={10}>
+                <TagCard />
+                <InstructionCard />
+            </Grid>
+       </Box>
     );
 }
 
