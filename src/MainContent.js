@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import MainCard from './components/MainCard';
 import { Card, CardContent, Typography } from '@mui/material';
 import Box from "@mui/material/Box"
+
 function MainContent() {
     return (
         <Box sx={{ width: "100%" }}>
