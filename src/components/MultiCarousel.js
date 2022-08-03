@@ -4,6 +4,16 @@ import Card from '@mui/material/Card';
 import Box from "@mui/material/Box"
 
 export default function MultiCarousel({ autoPlaySpeed, rtl }) {
+
+    const IMAGES = [
+        "https://i.pinimg.com/originals/7f/c7/17/7fc717724414a8f51fbb592c1a36b33d.png",
+        "https://i.pinimg.com/originals/4b/6f/0f/4b6f0f786d32460c3eb9b9f1c68dcf69.png",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAcf1R1YoyiNeLoXcWAgejQNwLfzXySf-vA&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXExn76EXhcWk_TfeKVnIUdJQxHEVuairF_Q&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWVEdOmLEVMLSNRg1-lendVl_IxNDb4PDvLA&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxh2ciyaHCTQDas_FeGoCdDENFvhkyco7-iA&usqp=CAU",
+    ]
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -38,21 +48,12 @@ export default function MultiCarousel({ autoPlaySpeed, rtl }) {
                 rtl={rtl}
             >
 
+                {IMAGES.map((img, idx) => (
+                    // <Card sx={{ height: 75, width: 75 }}>
+                    <img src={img} alt={idx} width="75"></img>
+                    //  </Card>
+                ))}
 
-                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-                </Card>
-
-                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-                </Card>
-
-                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-                </Card>
-
-                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-                </Card>
-
-                <Card sx={{ height: 75, width: 75, backgroundColor: "#80a3d9" }}>
-                </Card>
 
 
             </Carousel>
