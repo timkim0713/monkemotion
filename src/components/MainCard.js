@@ -12,8 +12,9 @@ function MainCard({ title, subtitle, content }) {
         <Grid item xs={12} md={6}>
             <Card sx={{ height: 400, width: "100%", }}>
                 <CardContent>
-                    <Typography variant='h4'>{title}</Typography>
-                    <Typography variant='subtitle2'>{subtitle}</Typography>
+                    <Typography variant='h4' >{title}</Typography>
+
+                    <Typography variant='subtitle2' paddingBottom={"15px"} color={"#a1a1a1"}>{subtitle}</Typography>
 
                     <Typography variant='body1'>
                         {content}
