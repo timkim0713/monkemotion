@@ -55,7 +55,7 @@ function Navbar(props) {
 
     return (
         <>
-            <AppBar component="nav" style={{ zIndex: 99999 }}>
+            <AppBar component="nav" style={{ zIndex: 99999 }} sx={{ bgcolor: "white" }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -69,6 +69,7 @@ function Navbar(props) {
                     <Typography
                         variant="h6"
                         component="div"
+                        color="primary"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
                         MONKEMOTION
@@ -76,8 +77,8 @@ function Navbar(props) {
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item, idx) => (
                             <Link to={navItemsPath[idx]} style={{ textDecoration: 'none', }}>
-                                <Button key={item} sx={{ color: '#fff' }}>
-                                    <Typography>{item}</Typography>
+                                <Button key={item}>
+                                    <Typography color="primary">{item}</Typography>
                                 </Button>
                             </Link>
 

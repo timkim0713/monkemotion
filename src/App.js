@@ -7,30 +7,35 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import Home from "./pages/Home"
 import Contribute from "./pages/Contribute"
 import Research from "./pages/Research"
 import About from "./pages/About"
+import theme from "./theme"
 
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <Container sx={{ mt: 10, mb: 10 }}>
+      <ThemeProvider theme={theme}>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="research" element={<Research />} />
-          <Route path="contribute" element={<Contribute />} />
-          <Route path="about" element={<About />} />
+        <Navbar></Navbar>
+        <Container sx={{ mt: 10, mb: 10 }}>
 
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="research" element={<Research />} />
+            <Route path="contribute" element={<Contribute />} />
+            <Route path="about" element={<About />} />
+
+          </Routes>
 
 
-      </Container>
-      <Footer></Footer>
+        </Container>
+        <Footer></Footer>
+      </ThemeProvider>
     </>
   );
 }
