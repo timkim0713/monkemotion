@@ -12,7 +12,7 @@ function Home() {
             <MainCarousel />
 
             <Box mt={10}>
-                <MainContent />
+                <MainContent img={"https://mui.com/static/images/grid/complex.jpg"} title={"We Love Monkeys"} content={"Monkeys can help us."} subtitle={"August 3rd 2022"}/>
             </Box>
 
             <Box mt={10}>
