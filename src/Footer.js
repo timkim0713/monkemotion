@@ -23,12 +23,12 @@ function Footer() {
             backgroundColor={"primary.main"}
             sx={{ height: "40vh", paddingTop: 10 }}
         >
-            <Typography variant={"body1"}>Monkemotion Footer</Typography>
+            <Typography variant={"body1"} color={"secondary.main"}>2022 Monkemotion©</Typography>
             <Grid container direction="row" justifyContent={"center"}>
 
                 {navItems.map((item, idx) => (
                     <Link to={navItemsPath[idx]} style={{ textDecoration: 'none' }}>
-                        <ListItemButton>{item}
+                        <ListItemButton><Typography color={"secondary.main"}>{item}</Typography>
                         </ListItemButton>
                     </Link>
 
