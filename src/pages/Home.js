@@ -29,7 +29,7 @@ function Home() {
 
 
                         <Link to={"/contribute"} style={{ textDecoration: 'none' }}>
-                            <Button variant={"outlined"} onClick={() => { }}>
+                            <Button variant={"outlined"} >
                                 <Typography variant={"h6"}>
                                     Contribute Now
                                 </Typography>
