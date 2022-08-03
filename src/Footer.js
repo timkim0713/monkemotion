@@ -20,7 +20,8 @@ function Footer() {
             container
             direction="row"
             justifyContent="center"
-            sx={{ height: "40vh", backgroundColor: "lightGrey", paddingTop: 10 }}
+            backgroundColor={"primary.main"}
+            sx={{ height: "40vh", paddingTop: 10 }}
         >
             <Typography variant={"body1"}>Monkemotion Footer</Typography>
             <Grid container direction="row" justifyContent={"center"}>
