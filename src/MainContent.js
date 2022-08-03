@@ -4,7 +4,7 @@ import MainCard from './components/MainCard';
 import { Card, CardContent, Typography } from '@mui/material';
 import Box from "@mui/material/Box"
 
-function MainContent() {
+function MainContent({ title, subtitle, content, img }) {
     return (
         <Box sx={{ width: "100%" }}>
             <Grid container
@@ -13,10 +13,11 @@ function MainContent() {
             >
                 <Grid item xs={12} md={6}>
                     <Card sx={{ height: 400, width: "100%", }}>
+                        <img src={img}></img>
                     </Card>
                 </Grid>
 
-                <MainCard title={"Monkemotion"} content={"description"} />
+                <MainCard title={title} content={content} subtitle={subtitle} />
             </Grid>
         </Box>
     );

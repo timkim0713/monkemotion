@@ -13,11 +13,11 @@ function About() {
         <Box sx={{ width: "100%" }}>
             <Heading title={"About"} content={"Learn about what we do."} />
             <Box mt={10}>
-                <MainContent />
+                <MainContent img={"https://mui.com/static/images/grid/complex.jpg"} title={"Abc"} content={"content"} subtitle={"sub1"} />
             </Box>
 
             <Box mt={10}>
-                <MainContent />
+                <MainContent img={"https://mui.com/static/images/grid/complex.jpg"} title={"Abc"} content={"content"} subtitle={"sub2"} />
             </Box>
 
         </Box>
