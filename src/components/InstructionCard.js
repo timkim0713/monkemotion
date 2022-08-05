@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -19,7 +19,9 @@ import Paper from '@mui/material/Paper';
 function InstructionCard() {
 
 
-    const [currentLabel, setCurrentLabel] = React.useState("")
+    const [currentLabel, setCurrentLabel] = useState("")
+    const [currentX, setCurrentX] = useState("")
+    const [currentY, setCurrentY] = useState("")
 
 
     function createData(name, xposition, yposition,) {
@@ -33,17 +35,22 @@ function InstructionCard() {
         createData('Mouth', 356, 16.0),
         createData('Left Ear', 305, 3.7),
         createData('Right Ear', 356, 16.0),
+
+        createData('Middle Ear', 356, 16.0),
+
     ];
 
     return (
 
         <Grid item xs={12} md={5}>
-            <Card sx={{ height: 425, width: "100%", }}>
-                <CardContent>
+            <Card sx={{
+                height: 425, width: "100%", overflow: 'auto'
+            }}>
+                < CardContent >
                     <Typography variant='body1' sx={{ m: 1 }}>Data Values</Typography>
 
                     <TableContainer component={Paper}>
-                        <Table aria-label="simple table"
+                        <Table stickyHeader aria-label="simple table"
 
                             size="small"
                         >
@@ -82,8 +89,8 @@ function InstructionCard() {
                     </TableContainer>
 
                 </CardContent>
-            </Card>
-        </Grid>
+            </Card >
+        </Grid >
 
     );
 }
