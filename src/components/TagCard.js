@@ -26,7 +26,7 @@ function TagCard() {
 
                 <CardContent sx={{ textAlign: "center" }}>
                     <Typography variant='body1' sx={{ m: 1 }}>Label</Typography>
-                    <img src={currentImage} style={{ borderRadius: "10px" }}></img>
+                    <img src={currentImage} style={{ borderRadius: "10px", cursor: "pointer" }}></img>
                 </CardContent>
 
             </Card>

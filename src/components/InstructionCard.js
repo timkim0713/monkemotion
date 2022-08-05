@@ -7,7 +7,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from "@mui/material/Grid"
 
-
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -20,6 +19,9 @@ import Paper from '@mui/material/Paper';
 function InstructionCard() {
 
 
+    const [currentLabel, setCurrentLabel] = React.useState("")
+
+
     function createData(name, xposition, yposition,) {
         return { name, xposition, yposition };
     }
@@ -28,6 +30,7 @@ function InstructionCard() {
         createData('Left Eye', 159, 6.0),
         createData('Right Eye', 237, 9.0),
         createData('Center Nose', 262, 16.0),
+        createData('Mouth', 356, 16.0),
         createData('Left Ear', 305, 3.7),
         createData('Right Ear', 356, 16.0),
     ];
@@ -40,7 +43,10 @@ function InstructionCard() {
                     <Typography variant='body1' sx={{ m: 1 }}>Data Values</Typography>
 
                     <TableContainer component={Paper}>
-                        <Table aria-label="simple table">
+                        <Table aria-label="simple table"
+
+                            size="small"
+                        >
                             <TableHead>
                                 <TableRow>
                                     <TableCell>Label</TableCell>
@@ -51,11 +57,21 @@ function InstructionCard() {
                             <TableBody>
                                 {rows.map((row) => (
                                     <TableRow
+
                                         key={row.name}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        sx={{
+                                            '&:last-child td, &:last-child th': { border: 0 },
+                                            backgroundColor: currentLabel == row.name ? "#4b6587" : "white",
+                                            height: currentLabel === row.name ? 70 : 50,
+                                            transition: "200ms"
+
+                                        }}
+
                                     >
                                         <TableCell component="th" scope="row">
-                                            {row.name}
+                                            <Button variant='outlined' size="small" color={row.name === currentLabel ? 'secondary' : 'primary'} onClick={() => { setCurrentLabel(row.name) }}>
+                                                {row.name}
+                                            </Button>
                                         </TableCell>
                                         <TableCell align="right">{row.xposition}</TableCell>
                                         <TableCell align="right">{row.yposition}</TableCell>
