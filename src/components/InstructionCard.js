@@ -73,8 +73,8 @@ function InstructionCard() {
                                                 {row.name}
                                             </Button>
                                         </TableCell>
-                                        <TableCell align="right">{row.xposition}</TableCell>
-                                        <TableCell align="right">{row.yposition}</TableCell>
+                                        <TableCell align="right"><Typography variant='outlined' size="small" color={row.name === currentLabel ? 'secondary' : 'primary'}>{row.xposition}</Typography></TableCell>
+                                        <TableCell align="right"><Typography variant='outlined' size="small" color={row.name === currentLabel ? 'secondary' : 'primary'}>{row.yposition}</Typography></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
