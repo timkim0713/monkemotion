@@ -69,12 +69,12 @@ function InstructionCard() {
 
                                     >
                                         <TableCell component="th" scope="row">
-                                            <Button variant='outlined' size="small" color={row.name === currentLabel ? 'secondary' : 'primary'} onClick={() => { setCurrentLabel(row.name) }}>
-                                                {row.name}
+                                            <Button variant={row.name === currentLabel ? 'contained' : 'outlined'} size="small" color={row.name === currentLabel ? 'secondary' : 'primary'} onClick={() => { setCurrentLabel(row.name) }}>
+                                                <Typography variant='subtitle2' color='primary' >{row.name}</Typography>
                                             </Button>
                                         </TableCell>
-                                        <TableCell align="right"><Typography variant='outlined' size="small" color={row.name === currentLabel ? 'secondary' : 'primary'}>{row.xposition}</Typography></TableCell>
-                                        <TableCell align="right"><Typography variant='outlined' size="small" color={row.name === currentLabel ? 'secondary' : 'primary'}>{row.yposition}</Typography></TableCell>
+                                        <TableCell align="right"><Typography color={row.name === currentLabel ? 'secondary' : 'primary'} sx={{ fontWeight: row.name === currentLabel ? 'bold' : '400' }}>{row.xposition}</Typography></TableCell>
+                                        <TableCell align="right"><Typography color={row.name === currentLabel ? 'secondary' : 'primary'} sx={{ fontWeight: row.name === currentLabel ? 'bold' : '400' }}>{row.yposition}</Typography></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
