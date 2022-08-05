@@ -7,16 +7,22 @@ export default function MainCarousel() {
         <Carousel
             autoPlay={true} emulateTouch={true} infiniteLoop={true} showThumbs={false} showStatus={false}>
             <div>
-                <img src="https://picsum.photos/id/237/600/300" />
-                <p className="legend">Legend 1</p>
+                <img
+                
+                height={400}
+                 style={{objectFit: "cover"}}
+                src="https://images.newscientist.com/wp-content/uploads/2022/02/01174019/PRI_221086136.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" />
+                <p className="legend">Olive Baboons (Papio Anubis) that are located at the Seneca Park Zoo are used for this study.</p>
             </div>
             <div>
-                <img src="https://picsum.photos/id/237/600/300" />
-                <p className="legend">Legend 2</p>
+                <img                     style={{objectFit: "cover"}}
+            height={400} src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1200,h_900/https://neprimateconservancy.org/wp-content/uploads/2021/10/olive-baboon-animal-1307280-en-resize.jpg" />
+                <p className="legend">Olive Baboons live in groups, also known as "troops", in the wild.</p>
             </div>
             <div>
-                <img src="https://picsum.photos/id/237/600/300" />
-                <p className="legend">Legend 3</p>
+                <img                    style={{objectFit: "cover"}}
+              height={400}src="https://journals.plos.org/plosone/article/figure/image?download&size=large&id=10.1371/journal.pone.0263314.g001" />
+                <p className="legend">Olive Baboons are commonly encountered in Africa.</p>
             </div>
         </Carousel>
     );
