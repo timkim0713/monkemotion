@@ -21,13 +21,14 @@ export default function MainCarousel({ title, date, author, content, topImg, bot
             <Divider sx={{ m: 2, ml: 0 }} />
             <Box>
                 <Box sx={{ textAlign: "center", m: 5 }}>
-                    <img src={topImg} style={{ borderRadius: "10px" }} />
+                    <img height={400}
+                 style={{objectFit: "cover",borderRadius:"10px"}} src={topImg} />
                 </Box>
                 <Typography variant="body1" color="#404040" sx={{ lineHeight: 2 }}>
                     {content}
                 </Typography>
                 <Box sx={{ textAlign: "center", m: 5 }}>
-                    <img src={bottomImg} style={{ borderRadius: "10px" }} />
+                    <img height={400} src={bottomImg} style={{ borderRadius: "10px",objectFit:"cover"}} />
                 </Box>
             </Box>
         </>
