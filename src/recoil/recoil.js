@@ -7,31 +7,31 @@ import {
 
 export const currentImageRecoil = atom({
     key: 'currentImageRecoil', // unique ID (with respect to other atoms/selectors)
-    default: '', // default value (aka initial value)
+    default: 'a', // default value (aka initial value)
 });
 
 
 export const currentLabelRecoil = atom({
     key: 'currentLabelRecoil', // unique ID (with respect to other atoms/selectors)
-    default: '', // default value (aka initial value)
+    default: 'b', // default value (aka initial value)
 });
 
 
 export const currentXRecoil = atom({
     key: 'currentXRecoil', // unique ID (with respect to other atoms/selectors)
-    default: '', // default value (aka initial value)
+    default: '0', // default value (aka initial value)
 });
 
 
 
 export const currentYRecoil = atom({
     key: 'currentYRecoil', // unique ID (with respect to other atoms/selectors)
-    default: '', // default value (aka initial value)
+    default: '0', // default value (aka initial value)
 });
 
 
-export const dataRecoil = atom = ({
-    key: "dataRecoil",
-    default: {}
-})
+export const dataRecoil = atom({
+    key: 'dataRecoil', // unique ID (with respect to other atoms/selectors)
+    default: {}, // default value (aka initial value)
+});
 

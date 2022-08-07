@@ -15,11 +15,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import { currentLabelRecoil, currentXRecoil, currentYRecoil } from "../recoil/recoil"
 import {
 
     useRecoilState,
 } from 'recoil';
+import { currentLabelRecoil, currentXRecoil, currentYRecoil } from "../recoil/recoil"
+
 
 function InstructionCard() {
 
@@ -40,7 +41,6 @@ function InstructionCard() {
         createData('Mouth', 356, 16.0),
         createData('Left Ear', 305, 3.7),
         createData('Right Ear', 356, 16.0),
-
         createData('Middle Ear', 356, 16.0),
 
     ];

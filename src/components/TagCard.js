@@ -8,10 +8,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
 
-import { currentLabelRecoil, currentXRecoil, currentYRecoil, currentImageRecoil, dataRecoil } from "../recoil/recoil"
+
 import {
     useRecoilState,
 } from 'recoil';
+import { currentLabelRecoil, currentXRecoil, currentYRecoil, currentImageRecoil, dataRecoil } from "../recoil/recoil"
+
 
 
 function TagCard() {
