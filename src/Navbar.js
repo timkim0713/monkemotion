@@ -40,7 +40,7 @@ function Navbar(props) {
             {navItems.map((item, idx) => (
                 <Link to={navItemsPath[idx]} style={{ textDecoration: 'none', }}>
                     <ListItemButton >
-                        <Typography variant="body2">
+                        <Typography variant="body2" color={"primary"}>
                             {item}
                         </Typography>
 
@@ -64,7 +64,7 @@ function Navbar(props) {
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
-                        <MenuIcon />
+                        <MenuIcon color='primary' />
                     </IconButton>
                     <Typography
                         variant="h6"
