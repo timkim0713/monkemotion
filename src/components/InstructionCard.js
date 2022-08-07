@@ -19,7 +19,7 @@ import {
 
     useRecoilState,
 } from 'recoil';
-import { currentLabelRecoil, currentXRecoil, currentYRecoil } from "../recoil/recoil"
+import { currentLabelRecoil, currentXRecoil, currentYRecoil, dataRecoil } from "../recoil/recoil"
 
 
 function InstructionCard() {
@@ -28,22 +28,8 @@ function InstructionCard() {
     const [currentLabel, setCurrentLabel] = useRecoilState(currentLabelRecoil)
     const [currentX, setCurrentX] = useRecoilState(currentXRecoil)
     const [currentY, setCurrentY] = useRecoilState(currentYRecoil)
+    const [data, setData] = useRecoilState(dataRecoil)
 
-
-    function createData(name, xposition, yposition,) {
-        return { name, xposition, yposition };
-    }
-
-    const rows = [
-        createData('Left Eye', 159, 6.0),
-        createData('Right Eye', 237, 9.0),
-        createData('Center Nose', 262, 16.0),
-        createData('Mouth', 356, 16.0),
-        createData('Left Ear', 305, 3.7),
-        createData('Right Ear', 356, 16.0),
-        createData('Middle Ear', 356, 16.0),
-
-    ];
 
     return (
 
@@ -67,26 +53,25 @@ function InstructionCard() {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {rows.map((row) => (
+                                {Object.keys(data).map((label) => (
                                     <TableRow
-
-                                        key={row.name}
+                                        key={label}
                                         sx={{
                                             '&:last-child td, &:last-child th': { border: 0 },
-                                            backgroundColor: currentLabel == row.name ? "#4b6587" : "white",
-                                            height: currentLabel === row.name ? 70 : 50,
+                                            backgroundColor: currentLabel == label ? "#4b6587" : "white",
+                                            height: currentLabel === label ? 70 : 50,
                                             transition: "200ms"
 
                                         }}
 
                                     >
                                         <TableCell component="th" scope="row">
-                                            <Button variant={row.name === currentLabel ? 'contained' : 'outlined'} size="small" color={row.name === currentLabel ? 'secondary' : 'primary'} onClick={() => { setCurrentLabel(row.name) }}>
-                                                <Typography variant='subtitle2' color='primary' >{row.name}</Typography>
+                                            <Button variant={label === currentLabel ? 'contained' : 'outlined'} size="small" color={label === currentLabel ? 'secondary' : 'primary'} onClick={() => { setCurrentLabel(label) }}>
+                                                <Typography variant='subtitle2' color='primary' >{label}</Typography>
                                             </Button>
                                         </TableCell>
-                                        <TableCell align="right"><Typography color={row.name === currentLabel ? 'secondary' : 'primary'} sx={{ fontWeight: row.name === currentLabel ? 'bold' : '400' }}>{row.xposition}</Typography></TableCell>
-                                        <TableCell align="right"><Typography color={row.name === currentLabel ? 'secondary' : 'primary'} sx={{ fontWeight: row.name === currentLabel ? 'bold' : '400' }}>{row.yposition}</Typography></TableCell>
+                                        <TableCell align="right"><Typography color={label === currentLabel ? 'secondary' : 'primary'} sx={{ fontWeight: label === currentLabel ? 'bold' : '400' }}>{data[label].x}</Typography></TableCell>
+                                        <TableCell align="right"><Typography color={label === currentLabel ? 'secondary' : 'primary'} sx={{ fontWeight: label === currentLabel ? 'bold' : '400' }}>{data[label].y}</Typography></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

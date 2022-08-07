@@ -29,7 +29,6 @@ function TagCard() {
     const [currentY, setCurrentY] = useRecoilState(currentYRecoil)
 
 
-
     const [data, setData] = useRecoilState(dataRecoil)
 
 
@@ -43,10 +42,16 @@ function TagCard() {
         var offset = imageRef.current.getBoundingClientRect();
         var x = Math.floor((e.pageX - offset.left) / offset.width * 10000) / 100;
         var y = Math.floor((e.pageY - offset.top) / offset.height * 10000) / 100;
-        console.log(x, y);
+        console.log(currentLabel, x, y);
 
         setCurrentX(x)
         setCurrentY(y)
+
+        const updatedCurrentLabel = { x: String(x), y: String(y) }
+        console.log(data)
+
+        setData({ ...data, [currentLabel]: updatedCurrentLabel })
+
     }
 
     return (
