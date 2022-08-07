@@ -9,9 +9,9 @@ function MainContent({ title, subtitle, content, img }) {
         <Box sx={{ width: "100%" }}>
             <Grid container
                 direction={"row"}
-                justifyContent={"space-between"} columnSpacing={10} rowSpacing={10}
+                justifyContent={"space-between"} columnSpacing={10} rowSpacing={5}
             >
-                <Grid item xs={12} md={6} rowSpacing={10}>
+                <Grid item xs={12} md={6} >
                     <Card>
 
                         <CardMedia
