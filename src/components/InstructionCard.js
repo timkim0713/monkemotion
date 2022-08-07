@@ -14,16 +14,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Box from "@mui/material/Box"
 import {
 
-    useRecoilState,
+    useRecoilState, useResetRecoilState
 } from 'recoil';
 import { currentLabelRecoil, currentXRecoil, currentYRecoil, dataRecoil } from "../recoil/recoil"
 
 
 function InstructionCard() {
-
+    const reset = useResetRecoilState(dataRecoil);
 
     const [currentLabel, setCurrentLabel] = useRecoilState(currentLabelRecoil)
     const [currentX, setCurrentX] = useRecoilState(currentXRecoil)
@@ -80,7 +80,11 @@ function InstructionCard() {
 
                 </CardContent>
             </Card >
-            <Button variant='outlined' size="small">Reset</Button>
+            <Box display={"flex"} justifyContent={"flex-end"} sx={{ mr: -1, mt: 1 }}>
+                <CardActions>
+                    <Button variant='outlined' size="small" onClick={() => { reset() }}>Reset</Button>
+                </CardActions>
+            </Box>
         </Grid >
 
     );
