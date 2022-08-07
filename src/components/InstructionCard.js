@@ -80,6 +80,7 @@ function InstructionCard() {
 
                 </CardContent>
             </Card >
+            <Button variant='outlined' size="small">Reset</Button>
         </Grid >
 
     );
