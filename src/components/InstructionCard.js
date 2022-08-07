@@ -15,13 +15,18 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+import { currentLabelRecoil, currentXRecoil, currentYRecoil } from "../recoil/recoil"
+import {
+
+    useRecoilState,
+} from 'recoil';
 
 function InstructionCard() {
 
 
-    const [currentLabel, setCurrentLabel] = useState("")
-    const [currentX, setCurrentX] = useState("")
-    const [currentY, setCurrentY] = useState("")
+    const [currentLabel, setCurrentLabel] = useRecoilState(currentLabelRecoil)
+    const [currentX, setCurrentX] = useRecoilState(currentXRecoil)
+    const [currentY, setCurrentY] = useRecoilState(currentYRecoil)
 
 
     function createData(name, xposition, yposition,) {

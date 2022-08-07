@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -7,16 +7,44 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
+
+import { currentLabelRecoil, currentXRecoil, currentYRecoil, currentImageRecoil, dataRecoil } from "../recoil/recoil"
+import {
+    useRecoilState,
+} from 'recoil';
+
+
 function TagCard() {
 
 
-    const [currentImage, setCurrentImage] = useState("https://picsum.photos/400/300")
-    const [data, setData] = useState({})
+    const imageRef = useRef()
+    const [currentImage, setCurrentImage] = useRecoilState(currentImageRecoil)
+
+
+
+    const [currentLabel, setCurrentLabel] = useRecoilState(currentLabelRecoil)
+    const [currentX, setCurrentX] = useRecoilState(currentXRecoil)
+    const [currentY, setCurrentY] = useRecoilState(currentYRecoil)
+
+
+
+    const [data, setData] = useRecoilState(dataRecoil)
 
 
     function generateNewImage() {
         const newImage = `https://picsum.photos/400/${Math.floor(Math.random() * 100 + 400)}`
         setCurrentImage(newImage)
+    }
+
+
+    const imageClick = (e) => {
+        var offset = imageRef.current.getBoundingClientRect();
+        var x = Math.floor((e.pageX - offset.left) / offset.width * 10000) / 100;
+        var y = Math.floor((e.pageY - offset.top) / offset.height * 10000) / 100;
+        console.log(x, y);
+
+        setCurrentX(x)
+        setCurrentY(y)
     }
 
     return (
@@ -26,7 +54,7 @@ function TagCard() {
 
                 <CardContent sx={{ textAlign: "center" }}>
                     <Typography variant='body1' sx={{ m: 1 }}>Label</Typography>
-                    <img src={currentImage} style={{ borderRadius: "10px", cursor: "pointer" }}></img>
+                    <img alt="img" onClick={imageClick} ref={imageRef} src={currentImage} style={{ borderRadius: "10px", cursor: "pointer", maxHeight: 325 }}></img>
                 </CardContent>
 
             </Card>

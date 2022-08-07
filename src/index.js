@@ -7,15 +7,20 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-
+import {
+  RecoilRoot,
+} from 'recoil';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
+  <RecoilRoot>
 
-    </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+
+      </BrowserRouter>
+    </React.StrictMode>
+  </RecoilRoot>
 );
 
