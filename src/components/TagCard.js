@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -30,6 +30,21 @@ function TagCard() {
 
 
     const [data, setData] = useRecoilState(dataRecoil)
+    const [isDataReady, setIsDataReady] = useState(false)
+
+
+
+    useEffect(() => {
+        for (let [key, value] of Object.entries(data)) {
+            if (data[key].x == 0 && data[key].y == 0) {
+                setIsDataReady(false)
+                return
+            }
+        }
+        setIsDataReady(true)
+    }, [data])
+
+
 
 
     function generateNewImage() {
@@ -68,7 +83,7 @@ function TagCard() {
             <Box display={"flex"} justifyContent={"flex-end"} sx={{ mr: -1, mt: 1 }}>
                 <CardActions>
                     <Button variant='outlined' size="small" onClick={() => { generateNewImage() }}>Generate New Image</Button>
-                    <Button variant='outlined' size="small">Submit Data</Button>
+                    <Button variant='outlined' size="small" disabled={!isDataReady} >Submit Data</Button>
                 </CardActions>
             </Box>
         </Grid>
