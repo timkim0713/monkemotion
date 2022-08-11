@@ -35,7 +35,7 @@ function TagCard() {
 
 
     useEffect(() => {
-        for (let [key, value] of Object.entries(data)) {
+        for (let [key] of Object.entries(data)) {
             if (data[key].x == 0 && data[key].y == 0) {
                 setIsDataReady(false)
                 return
@@ -43,7 +43,6 @@ function TagCard() {
         }
         setIsDataReady(true)
     }, [data])
-
 
 
 
