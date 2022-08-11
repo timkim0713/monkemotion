@@ -7,10 +7,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
-
-
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 import {
-    useRecoilState,
+    useRecoilState, useResetRecoilState
 } from 'recoil';
 import { currentLabelRecoil, currentXRecoil, currentYRecoil, currentImageRecoil, dataRecoil } from "../recoil/recoil"
 
@@ -18,6 +18,7 @@ import { currentLabelRecoil, currentXRecoil, currentYRecoil, currentImageRecoil,
 
 function TagCard() {
 
+    const reset = useResetRecoilState(dataRecoil);
 
     const imageRef = useRef()
     const [currentImage, setCurrentImage] = useRecoilState(currentImageRecoil)
@@ -31,12 +32,16 @@ function TagCard() {
 
     const [data, setData] = useRecoilState(dataRecoil)
     const [isDataReady, setIsDataReady] = useState(false)
+    const [isDataEdited, setIsDataEdited] = useState(false)
 
+
+    //data submission
+    const [isLoading, setIsLoading] = useState(false)
 
 
     useEffect(() => {
         for (let [key] of Object.entries(data)) {
-            if (data[key].x == 0 && data[key].y == 0) {
+            if (Number(data[key].x) === 0 && Number(data[key].y) === 0) {
                 setIsDataReady(false)
                 return
             }
@@ -45,10 +50,65 @@ function TagCard() {
     }, [data])
 
 
+    useEffect(() => {
+        for (let [key] of Object.entries(data)) {
+            if (Number(data[key].x) !== 0 || Number(data[key].y) !== 0) {
+                setIsDataEdited(true)
+                return
+            }
+        }
+        setIsDataEdited(false)
+    }, [data])
 
-    function generateNewImage() {
-        const newImage = `https://picsum.photos/400/${Math.floor(Math.random() * 100 + 400)}`
-        setCurrentImage(newImage)
+
+    function submitData() {
+        setIsLoading(true)
+
+
+        // mock sending data to backend api
+        //@TODO
+        // Handle reseting data, generate new image, etc...
+        setTimeout(() => {
+            setIsLoading(false)
+            reset()
+            generateNewImage(true)
+        }, 2000);
+
+
+
+
+
+
+    }
+
+
+    function generateNewImage(afterSubmitting) {
+        if (isDataEdited && !afterSubmitting) {
+            if (window.confirm("Changes on currently working data will be discarded. Are you sure you want to generate new image?")) {
+                setIsLoading(true)
+                // later fetch image from backend
+                setTimeout(() => {
+                    const newImage = `https://picsum.photos/400/${Math.floor(Math.random() * 100 + 400)}`
+                    setCurrentImage(newImage)
+                    reset()
+                    setIsLoading(false)
+                }, 2000);
+
+
+            }
+
+        } else {
+            setIsLoading(true)
+
+            setTimeout(() => {
+                const newImage = `https://picsum.photos/400/${Math.floor(Math.random() * 100 + 400)}`
+                setCurrentImage(newImage)
+                reset()
+                setIsLoading(false)
+            }, 2000);
+
+        }
+
     }
 
 
@@ -81,10 +141,17 @@ function TagCard() {
             </Card>
             <Box display={"flex"} justifyContent={"flex-end"} sx={{ mr: -1, mt: 1 }}>
                 <CardActions>
-                    <Button variant='outlined' size="small" onClick={() => { generateNewImage() }}>Generate New Image</Button>
-                    <Button variant='outlined' size="small" disabled={!isDataReady} >Submit Data</Button>
+                    <Button variant='outlined' size="small" onClick={() => { generateNewImage(false) }}>Generate New Image</Button>
+                    <Button variant='outlined' size="small" onClick={() => { submitData() }} disabled={!isDataReady} >Submit Data</Button>
                 </CardActions>
             </Box>
+            <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={isLoading}
+            >
+                <Typography variant="h4" sx={{ mr: 2 }}>Processing...</Typography>
+                <CircularProgress color="inherit" />
+            </Backdrop>
         </Grid>
 
     );
