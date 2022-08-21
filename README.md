@@ -1,3 +1,7 @@
+# Installation
+   - npm i
+   - npm start
+
 # Todo lists as of 08/11/2022
 
 ### Main Tech / Libraries
